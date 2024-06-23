@@ -1,0 +1,236 @@
+{
+    "index": 2,
+    "message": "Congrats: mining successful",
+    "notified nodes": [
+        "http://127.0.0.1:5002",
+        "http://127.0.0.1:5003"
+    ],
+    "previous_hash": "DH7MG9hwVhw2ksH22ppi_vA70RP95tnK4ZSsiaP3WborG2_UXWNv7aoE02VfLwSrpZPhKf97z0_1W4bvH-uh9w==",
+    "replaced_before_mining": null,
+    "timestamp": "2024-01-21 22:08:49.398851",
+    "transactions": [
+        {
+            "author": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+            "book": {
+                "author": "Andrzej Sapkowski",
+                "isbn": "ISBN 9788375780635",
+                "owner": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+                "title": "Ostatnie życzenie",
+                "uuid": "b2461fb3-a95a-48e5-b125-c1f76d8dea14"
+            },
+            "input": null,
+            "locked": false,
+            "output": {
+                "end_date": null,
+                "target_lib_addr": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+                "user_hash": null
+            },
+            "timestamp": "2024-01-21 15:51:29.397507",
+            "type": 0,
+            "validators": [
+                [
+                    "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+                    "MEUCIQCdIej1TaH7Jj8mnmKeyC2REnF7mLLlXPxuzLiiJ-MXZAIgLrwlotV7OJec2geYHroTincU9blIiHSkdBMXfBLN8GU="
+                ],
+                [
+                    "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+                    "MEQCIGUB31Rav5UBikHu4jvNtKdLty0Hsu9rkCkdb21qo0gHAiALsWLzUQyUcUVQjoY2UZVAV1rtFLZEEqXzgtMYuFqp6Q=="
+                ]
+            ]
+        }
+    ]
+}
+
+{
+    "author": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+    "book": {
+        "author": "Andrzej Sapkowski",
+        "isbn": "ISBN 9788375780635",
+        "owner": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+        "title": "Ostatnie życzenie",
+        "uuid": "b2461fb3-a95a-48e5-b125-c1f76d8dea14"
+    },
+    "input": {
+        "prev_tx": "udh3J-BjoZcIN-B_c470Jq-avY58Kvlo51mVK6Y6KDKOiD7LNKNjYI_LepivHd2nJ23dOBXj5ZSvTKQq7Qg9Yg==",
+        "use_condition": "MEUCIQCZ8Ma913Oym_BpTc2z7b-vS0_DRNjZE3RUeZFIgvY33wIgXuU85fDb_I0v22cQN1v_LjiGlelHMiZt1QTgkUsVB7U="
+    },
+    "locked": false,
+    "output": {
+        "end_date": 1706915717.999989,
+        "target_lib_addr": "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+        "user_hash": "2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af"
+    },
+    "timestamp": 1706051717.999989,
+    "type": 2,
+    "validators": [
+        [
+            "WjxZ5hzUS0_giOBNjgM43XMw4r2zU2dTSP20dRFkkETbOe1jl-FblMh6FxtkFnTa8IXqQhEy5BfZIWsRzwwshA==",
+            "MEUCIFDY4zlhlJRlhBU1YKXElSUikpORVaj2TOHc-VlVbcPHAiEAhYXCcIg6DysiPv2wzVVVUrqskqIyYzX1X4x0w9JpK-c="
+        ],
+        [
+            "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+            "MEUCIQC_RarCvMnxrkhQxrMh3Sj6xfJtUfDVuRDNRkqcBpVIIwIgCxJkZfVjb_vBtu7jlzRvoHlirLpunuhQARldz00CGCA="
+        ]
+    ]
+}
+
+{
+    "type": 0,
+    "book": {
+        "isbn": "ISBN 9788375780635",
+        "title": "Ostatnie życzenie",
+        "author": "Andrzej Sapkowski",
+        "uuid": "b2461fb3-a95a-48e5-b125-c1f76d8dea14"
+    }
+}
+
+"k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ==": {
+    "author": "Andrzej Sapkowski",
+    "isbn": "ISBN 9788375780635",
+    "owner": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+    "title": "Ostatnie życzenie",
+    "uuid": "b2461fb3-a95a-48e5-b125-c1f76d8dea14"
+}
+
+{
+    "type": 1,
+    "output": {
+        "target_lib_addr": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+        "user_hash": "2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af",
+        "days": 10
+    },
+    "book": {
+        "hash": "k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ=="
+    }
+}
+
+{
+    "error": [
+        "Duplicate pending transaction"
+    ],
+    "input": {
+        "book": {
+            "hash": "k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ=="
+        },
+        "output": {
+            "days": 10,
+            "target_lib_addr": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+            "user_hash": "2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af"
+        },
+        "type": 1
+    },
+    "message": "could not make reservation"
+}
+
+{
+    "message": "Transaction will appear in block: 3",
+    "pending_transactions": [
+        {
+            "author": "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+            "book": {
+                "author": "Andrzej Sapkowski",
+                "isbn": "ISBN 9788375780635",
+                "owner": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+                "title": "Ostatnie życzenie",
+                "uuid": "b2461fb3-a95a-48e5-b125-c1f76d8dea14"
+            },
+            "input": {
+                "prev_tx": "ax0XgWK2EySXGp_RNhTY4Pr31mMVY2Z3pCCnOKNWAYARojVDQzwzba4P6r6J0CS2EMHiJyZGrl4zwfv_G21ckg==",
+                "use_condition": "MEQCIBpNewty_Lt5zQ-snCKZD9I9G3sZGHD_9HKTZZjW04X7AiAWXgOdVcy0ptUiE6Xk14jTA_ZJomMvJlmc43aKFhXw9g=="
+            },
+            "locked": false,
+            "output": {
+                "end_date": 1708477467.292375,
+                "target_lib_addr": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+                "user_hash": "2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af"
+            },
+            "timestamp": 1707613467.292375,
+            "type": 1,
+            "validators": [
+                [
+                    "WjxZ5hzUS0_giOBNjgM43XMw4r2zU2dTSP20dRFkkETbOe1jl-FblMh6FxtkFnTa8IXqQhEy5BfZIWsRzwwshA==",
+                    "MEUCIQCUPZhzYGVWig4cEB6hb8CIWOD6CK8MStP6dO1MYT87LAIgKWg39lLP9p5u_glVU4qM2MxhrvaU5dLbpVyfCJeuCp0="
+                ],
+                [
+                    "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+                    "MEYCIQDTLEYNM7oA-chP823iuvIARqcuRHYtNdFVV3dkK2DMxQIhAP20r9xU2r15G-C2a9cP8MptHp8WbJ82-TGLXPEbg8c7"
+]]}]}
+
+{
+    "author": "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+    "book": {
+        "author": "Andrzej Sapkowski",
+        "isbn": "ISBN 9788375780635",
+        "owner": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+        "title": "Ostatnie życzenie",
+        "uuid": "b2461fb3-a95a-48e5-b125-c1f76d8dea14"
+    },
+    "input": {
+        "prev_tx": "ax0XgWK2EySXGp_RNhTY4Pr31mMVY2Z3pCCnOKNWAYARojVDQzwzba4P6r6J0CS2EMHiJyZGrl4zwfv_G21ckg==",
+        "use_condition": "MEQCIBpNewty_Lt5zQ-snCKZD9I9G3sZGHD_9HKTZZjW04X7AiAWXgOdVcy0ptUiE6Xk14jTA_ZJomMvJlmc43aKFhXw9g=="
+    },
+    "locked": false,
+    "output": {
+        "end_date": 1708477467.292375,
+        "target_lib_addr": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+        "user_hash": "2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af"
+    },
+    "timestamp": 1707613467.292375,
+    "type": 1,
+    "validators": [
+        [
+            "WjxZ5hzUS0_giOBNjgM43XMw4r2zU2dTSP20dRFkkETbOe1jl-FblMh6FxtkFnTa8IXqQhEy5BfZIWsRzwwshA==",
+            "MEUCIQCUPZhzYGVWig4cEB6hb8CIWOD6CK8MStP6dO1MYT87LAIgKWg39lLP9p5u_glVU4qM2MxhrvaU5dLbpVyfCJeuCp0="
+        ],
+        [
+            "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+            "MEYCIQDTLEYNM7oA-chP823iuvIARqcuRHYtNdFVV3dkK2DMxQIhAP20r9xU2r15G-C2a9cP8MptHp8WbJ82-TGLXPEbg8c7"
+        ]
+    ]
+}
+
+
+
+
+"chain": [
+    ...
+    {
+        "index": 4,
+        "previous_hash": "HrbWmBh1bZ1sJlqYw_AvOIQHgX4wmFHrF5ViMyj9JEBJTfA861_6SL87k_EKnIk1f7eKKo3J3chvP134pSvfXQ==",
+        "timestamp": "2024-02-12 01:03:03.181640",
+        "transactions": [
+            {
+                "author": "caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==",
+                "book": {
+                    ...
+                    "title": "Ostatnie życzenie",
+                    "uuid": "b2461fb3-a95a-48e5-b125-c1f76d8dea14"
+                },
+                "input": {...},
+                "locked": false,
+                "output": {...},
+                "timestamp": 1707696176.088254,
+                "type": 2,
+                "validators": [...]
+            },
+            {
+                "author": "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+                "book": {
+                    ...
+                    "title": "Miecz przeznaczenia",
+                    "uuid": "bfa19bd4-5f7d-4c02-9f0a-8de8af7cb747"
+                },
+                "input": null,
+                "locked": false,
+                "output": {
+                    "end_date": null,
+                    "target_lib_addr": "KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==",
+                    "user_hash": null
+                },
+                "timestamp": "2024-02-12 01:03:00.760132",
+                "type": 0,
+                "validators": [...]
+            }
+        ]
+    }
+]

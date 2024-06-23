@@ -1,0 +1,126 @@
+@startuml
+title Reserve transaction sequence 
+actor User
+participant User_Node 
+participant Network
+
+activate User
+User -> User_Node: [POST] /book/reserve 
+User_Node ->  User_Node: check request 
+activate User_Node
+
+opt request invalid  
+User_Node --> User: Response: Http: 4xx  
+end
+
+User_Node -> User_Node: create transaction
+
+group handle transaction [create transaction]
+User_Node -> User_Node: look up book on chain
+User_Node -> User_Node: check if transaction is possible
+opt transaction not possible 
+User_Node --> User: Response: Http: 4xx
+end
+
+User_Node -> User_Node: create transaction structure
+
+ref over User_Node, Network: Consensus
+end
+
+alt consensus not reached
+User_Node --> User: Response: Http: 4xx
+else consensus reached
+User_Node -> User_Node: add transaction to pending list
+User_Node ->> Network: propagate transaction
+User_Node --> User: 200 Success
+end
+
+@enduml
+
+@startuml
+title Consensus sequence 
+participant User_Node
+participant Network
+
+[->User_Node: new transaciton
+activate User_Node
+User_Node -> User_Node: select validators
+note over User_Node: select [n] unique validators \namong known nodes \nand verify they are up 
+loop for each validator
+note over User_Node: select [n] unique validators \namong known nodes \nand verify they are up 
+User_Node ->> Network: send signed transaction
+activate Network
+Network -> Network: verify transaction data 
+Network -> Network: validate author signature
+alt transaction invalid 
+Network -->> User_Node: invalid response
+else transaction valid
+Network -> Network: Sign Transaction
+Network -->> User_Node: send signed \ntransaction back
+deactivate Network
+end
+User_Node -> User_Node: count signed responses
+opt byzantine consensus reached
+' note over User_Node: until byzantine consensus reached
+User_Node -->[ : Consensus reached
+
+end
+
+end
+
+opt Not enough valid responses
+User_Node -->[ : Consensus not reached 
+end 
+
+@enduml
+
+@startuml
+title New block sequence 
+participant User_Node
+participant Network
+
+[-> User_Node: Mine block request
+activate User_Node
+
+User_Node -> User_Node: try replacing chain
+activate User_Node
+loop for each known node
+    User_Node -> Network: get full chain
+    activate Network
+    Network ->> User_Node: chain 
+    deactivate Network
+
+    opt other node length > User node length
+        User_Node -> User_Node: replace own chain
+    end
+end
+deactivate User_Node
+
+opt connection to all nodes failed
+    User_Node ->>[ : Mine failed \ncannot verify chain integrity
+
+end
+User_Node -> User_Node: create new block
+User_Node -> User_Node: propagate updated chain
+activate User_Node
+
+loop for each known node
+    User_Node --> Network: Request: GET: /chain/replace 
+    activate Network
+    Network -> Network: try replacing chain 
+    Network -->> User_Node: chain replaced
+    deactivate Network
+
+    User_Node -> User_Node: successful request +1
+end
+
+alt succesful request = known nodes
+    User_Node ->>[ : Mine success
+else succesful request != known nodes
+    User_Node ->>[ : Mine failed \nbut propagation failed
+end
+
+deactivate User_Node
+deactivate User_Node
+
+@enduml

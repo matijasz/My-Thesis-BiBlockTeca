@@ -1,0 +1,33 @@
+{
+    "users":  
+    { 
+        "user1": {
+            "name": "username 1",
+            "address": "address 1",
+            "hash": "2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af"
+        },
+        "user2": {
+            "name": "username 2",
+            "address": "address 2",
+            "hash": "2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af"
+        }
+    }
+    ,
+    "books":  
+    { 
+        "klj123asdasasdasdd32": { 
+            "isbn": "123-332-123-123", 
+            "owner": "320f4e9b6448292369056d3a94daaac8905136623eb24a7ab5fcdf47cf76af67", 
+            "free": true 
+        }
+    },
+    "nodes": 
+    {
+        "9543d418d04b071c7a9d2ffa085c67b28c8379cf858653ec56170f1f654f7863": {
+            "library_address": "node 2 00-002 Warsaw",
+            "lib_name": "node2 library",
+            "lib_mail": "node2@mail.com",
+            "network": "http://127.0.0.1:5002"
+        }
+    }
+}
