@@ -1,9 +1,4 @@
 import argparse
-import datetime
-import json
-import requests
-import time
-import logging
 from logging.config import dictConfig
 
 from hashlib import sha256
