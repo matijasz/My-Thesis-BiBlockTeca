@@ -1,0 +1,51 @@
+@startuml
+class MockDatastore {
+    save_datastore()
+    updateBooksStore()
+    getUser()
+    get_hash()
+    add_user()
+    create_book()
+    is_book_unique()
+        logger
+    key_store
+    datastore_path
+    lib : dict 
+    users : dict 
+    books : dict 
+    nodes : dict 
+    __init__(lib: dict , users: dict , books: dict , nodes: dict )
+}
+class Blockchain {
+    create_block()
+    get_previous_block()
+    add_node()
+    replace_chain()
+    _pop_duplicate_pending_transactions()
+    find_last_book_transaction()
+    is_chain_valid()
+    validate_transaction()
+    select_validators()
+    reach_consensus()
+    _hash_list()
+    update_pending_transactions()
+    propagate_transactions()
+    propagate_chain()
+    add_valid_transaction()
+    _is_not_target_of_previous_tx()
+    _is_tx_mint_or_return()
+    _is_tx_reserved_but_overdue()
+    add_mint_transaction()
+    add_reserve_transaction()
+    add_rent_transaction()
+    add_pending_return_transaction()
+    add_return_transaction()
+    add_destroy_transaction()
+    add_three_way_transaction()
+    diagnostics()
+        logger
+    chain
+    __init__()
+}
+MockDatastore <|-- Blockchain
+@enduml

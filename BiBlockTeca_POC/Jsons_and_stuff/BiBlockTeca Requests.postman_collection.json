@@ -1,0 +1,640 @@
+{
+	"info": {
+		"_postman_id": "6a9152ad-36cb-4765-8b44-3754df8ab077",
+		"name": "BiBlockTeca Requests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18363906"
+	},
+	"item": [
+		{
+			"name": "User interaction process",
+			"item": [
+				{
+					"name": "mint book 1- lib_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Transaction will appear in block:\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 0,\r\n    \"book\": {\r\n        \"isbn\": \"ISBN 9788375780635\",\r\n        \"title\": \"Ostatnie życzenie\",\r\n        \"author\": \"Andrzej Sapkowski\",\r\n        \"uuid\": \"b2461fb3-a95a-48e5-b125-c1f76d8dea14\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5001/book/mint"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine mint - lib_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5001/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "reserve book - 2-1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 1,\r\n    \"output\": {\r\n        \"target_lib_addr\": \"caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==\",\r\n        \"user_hash\": \"2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af\",\r\n        \"days\": 10\r\n    },\r\n    \"book\": {\r\n        \"hash\": \"k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5002/book/reserve"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine reserve - lib_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5002/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "rent a book 1-2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 2,\r\n    \"output\": {\r\n        \"target_lib_addr\": \"KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==\",\r\n        \"user_hash\": \"2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af\",\r\n        \"days\": 10\r\n    },\r\n    \"book\": {\r\n        \"hash\": \"k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5001/book/rent"
+					},
+					"response": []
+				},
+				{
+					"name": "mint book 2- lib_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Transaction will appear in block:\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 0,\r\n    \"book\": {\r\n        \"isbn\": \"ISBN 9788375780642\",\r\n        \"title\": \"Miecz przeznaczenia\",\r\n        \"author\": \"Andrzej Sapkowski\",\r\n        \"uuid\": \"bfa19bd4-5f7d-4c02-9f0a-8de8af7cb747\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5002/book/mint"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine rent - lib_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5001/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "reserve book - 3-2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 1,\r\n    \"output\": {\r\n        \"target_lib_addr\": \"KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==\",\r\n        \"user_hash\": \"2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af\",\r\n        \"days\": 10\r\n    },\r\n    \"book\": {\r\n        \"hash\": \"hTsv78pdemEZEy9sK__HK7nHBEVthovap8RBKuKl6AtVKpa7xVKLbQdbJP5nd9PBqtJMEKFeKhCLBeLKYf-V6Q==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5003/book/reserve"
+					},
+					"response": []
+				},
+				{
+					"name": "pending return - 2-1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 3,\r\n    \"output\": {\r\n        \"target_lib_addr\": \"caoOtaffaiy8YUtgS22sq3UmXzGSSrswEZfWn7zrz1aGuVqldJcaHycd14uISDCSs3RMh4eBesv_LwGWbA7Uag==\",\r\n        \"user_hash\": \"2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af\",\r\n        \"days\": 10\r\n    },\r\n    \"book\": {\r\n        \"hash\": \"k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5002/book/pending_return"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine pending - lib_2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5002/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "return a book - lib_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 4,\r\n    \"book\": {\r\n        \"hash\": \"k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5001/book/return"
+					},
+					"response": []
+				},
+				{
+					"name": "mint book 3- lib_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Transaction will appear in block:\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 0,\r\n    \"book\": {\r\n        \"isbn\": \"ISBN 9788375780659\",\r\n        \"title\": \"Krew elfów\",\r\n        \"author\": \"Andrzej Sapkowski\",\r\n        \"uuid\": \"2f760ebb-5e53-463a-9bf8-970cefb6c4da\"\r\n\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5003/book/mint"
+					},
+					"response": []
+				},
+				{
+					"name": "rent a book 2-3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 2,\r\n    \"output\": {\r\n        \"target_lib_addr\": \"WjxZ5hzUS0_giOBNjgM43XMw4r2zU2dTSP20dRFkkETbOe1jl-FblMh6FxtkFnTa8IXqQhEy5BfZIWsRzwwshA==\",\r\n        \"user_hash\": \"2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af\",\r\n        \"days\": 10\r\n    },\r\n    \"book\": {\r\n        \"hash\": \"hTsv78pdemEZEy9sK__HK7nHBEVthovap8RBKuKl6AtVKpa7xVKLbQdbJP5nd9PBqtJMEKFeKhCLBeLKYf-V6Q==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5002/book/rent"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine return - lib_1",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5001/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "get_chain lib_3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5001/chain/get_full_chain"
+					},
+					"response": []
+				},
+				{
+					"name": "pending return - 3-2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 3,\r\n    \"output\": {\r\n        \"target_lib_addr\": \"KvgNd5W5_fIpDcGfKqfywpO-wPTfy0yPm2Gw6b0cXi8OHKmz764bwV67qDyqkEwE--ovptjc6_hMpvVNRpyakw==\",\r\n        \"user_hash\": \"2bb58a1920016a8b222379b2ba7d52293b988c6a119541e35ae19ed610d6f1af\",\r\n        \"days\": 10\r\n    },\r\n    \"book\": {\r\n        \"hash\": \"hTsv78pdemEZEy9sK__HK7nHBEVthovap8RBKuKl6AtVKpa7xVKLbQdbJP5nd9PBqtJMEKFeKhCLBeLKYf-V6Q==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5003/book/pending_return"
+					},
+					"response": []
+				},
+				{
+					"name": "Burn da book Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 5,\r\n    \"book\": {\r\n        \"hash\": \"k8ItzESJtuSigfCcoyU6FCMfVNM60uBiEuxKwKmJUv2Ovxk95KFZcskwFJo3yA7KBzbBCMBjqTVd8jIIqYyiWQ==\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5001/book/burn"
+					},
+					"response": []
+				},
+				{
+					"name": "get_chain - lib_2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5002/chain/get_full_chain"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine reserve - lib_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5003/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine rent - lib_1 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5001/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine pending - lib_3",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5003/chain/mine_block"
+					},
+					"response": []
+				},
+				{
+					"name": "return a book - lib_1 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {\r",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\": 4,\r\n    \"book\": {\r\n        \"hash\": \"c47ff0ed0fe5c726bdb1268e0633c38d58c2cb9ad6ca1945cfd6786b8718a9f6\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://0.0.0.0:5001/book/return"
+					},
+					"response": []
+				},
+				{
+					"name": "Mine return - lib_1 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include(\"Congrats: mining successful\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://0.0.0.0:5001/chain/mine_block"
+					},
+					"response": []
+				}
+			],
+			"description": "whole rent chain by user from lib 2 followed by the same from user of lib 3"
+		}
+	]
+}
